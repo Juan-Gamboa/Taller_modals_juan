@@ -12,6 +12,9 @@ $(document).ready(()=>{
             //$(this).html("Mostrar h1");
         }
     });
+    $("#guardarT").click(function(){
+        $("body").html("<strong>Hola!!!!</strong>");
+    });
     $("#btncrearT").click(function(){
         $(".fondo_modalC").css("display","block");
     });
@@ -23,6 +26,25 @@ $(document).ready(()=>{
     });
     $("#cerrar_modalV").click(function(){
         $(".fondo_modalV").css("display","none");
+    });
+    $("#eliminarT").click(function(){
+        $(".fondo_modalE").css("display","block");
+    });
+    $("#cerrar_modalE").click(function(){
+        $(".fondo_modalE").css("display","none");
+    });
+    $("#NoE").click(function(){
+        $(".fondo_modalE").css("display","none");
+    });
+    $("#SiE").click(function(){
+        $(".fondo_modalE").css("display","none");
+        $(".fondo_modalEC").css("display","block");
+    });
+    $("#cerrar_modalEC").click(function(){
+        $(".fondo_modalEC").css("display","none");
+    });
+    $("#AceptarEC").click(function(){
+        $(".fondo_modalEC").css("display","none");
     });
 
 })

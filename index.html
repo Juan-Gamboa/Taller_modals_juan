@@ -37,6 +37,7 @@
     </header>
     <section id="tema" class="seccion_tema">
       <article class="titulo_contenido">
+        <input id="CheckT" type="checkbox">
         <h2 class="titulotm">Tema 1</h2>
         <button id="ocultarBtn" class="boton_slidedown">
           <lord-icon
@@ -48,7 +49,7 @@
           </lord-icon>
         </button>
       </article>
-      <div class="descripciont">
+      <article class="descripciont">
         <p>
           Lorem Ipsum es simplemente el texto de relleno de las imprentas y
           archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
@@ -57,7 +58,7 @@
           textos
         </p>
         <a id="abrirVermas">ver más</a>
-      </div>
+      </article>
     </section>
     <div class="fondo_modalC">
       <div class="modal_crear">
@@ -109,6 +110,7 @@
         </div>
       </div>
     </div>
+
     <div class="fondo_modalV">
       <div class="modal_crear">
         <button class="boton_cerrar" id="cerrar_modalV">
@@ -137,7 +139,7 @@
             <input type="date" name="fecha" id="fechaVIInput" disabled />
             <label>Fecha de modificación</label>
             <input type="date" name="fecha" id="fechaVMInput" disabled />
-            <button id="guardarT" type="submit">
+            <button id="AceptarV" type="submit">
               <lord-icon
                 src="https://cdn.lordicon.com/hjeefwhm.json"
                 trigger="hover"
@@ -148,6 +150,53 @@
               >Aceptar
             </button>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="fondo_modalE">
+      <div class="modal_eliminar">
+        <button class="boton_cerrar" id="cerrar_modalE">
+          <lord-icon
+            src="https://cdn.lordicon.com/vfzqittk.json"
+            trigger="hover"
+            style="width: 40px; height: 40px"
+          ></lord-icon>
+        </button>
+        <lord-icon
+              src="https://cdn.lordicon.com/njjuilvq.json"
+              trigger="loop"
+              colors="primary:#121331"
+              style="width: 100px; height: 100px"
+            >
+        </lord-icon>
+        <h1>¿Desea eliminar el registro?</h1>
+        <div class="BotonesSN">
+          <Button id="NoE" type="submit">No</Button>
+          <button id="SiE" type="button">Si</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fondo_modalEC">
+      <div class="modal_eliminar">
+        <button class="boton_cerrar" id="cerrar_modalEC">
+          <lord-icon
+            src="https://cdn.lordicon.com/vfzqittk.json"
+            trigger="hover"
+            style="width: 40px; height: 40px"
+          ></lord-icon>
+        </button>
+        <lord-icon
+              src="https://cdn.lordicon.com/hjeefwhm.json"
+              trigger="loop"
+              colors="primary:#121331"
+              style="width: 100px; height: 100px"
+            >
+        </lord-icon>
+        <h1>Registro Eliminado</h1>
+        <button id="AceptarEC" type="submit">Aceptar</button>
         </div>
       </div>
     </div>

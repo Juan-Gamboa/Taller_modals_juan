@@ -35,31 +35,35 @@
         </button>
       </nav>
     </header>
-    <section id="tema" class="seccion_tema">
-      <article class="titulo_contenido">
-        <input id="CheckT" type="checkbox">
-        <h2 class="titulotm">Tema 1</h2>
-        <button id="ocultarBtn" class="boton_slidedown">
-          <lord-icon
-            id="iconobtno"
-            src="https://cdn.lordicon.com/eflfmgmj.json"
-            trigger="hover"
-            style="width: 25px; height: 25px"
-          >
-          </lord-icon>
-        </button>
-      </article>
-      <article class="descripciont">
-        <p>
-          Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-          archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
-          las industrias desde el año 1500, cuando un impresor (N. del T.
-          persona que se dedica a la imprenta) desconocido usó una galería de
-          textos
-        </p>
-        <a id="abrirVermas">ver más</a>
-      </article>
-    </section>
+
+    <div class="bodyPage">
+      <section id="tema" class="seccion_tema">
+        <article class="titulo_contenido">
+          <input id="CheckT" type="checkbox">
+          <h2 class="titulotm">Tema 1</h2>
+          <button id="ocultarBtn" class="boton_slidedown">
+            <lord-icon
+              id="iconobtno"
+              src="https://cdn.lordicon.com/eflfmgmj.json"
+              trigger="hover"
+              style="width: 25px; height: 25px"
+            >
+            </lord-icon>
+          </button>
+        </article>
+        <article class="descripciont">
+          <p>
+            Lorem Ipsum es simplemente el texto de relleno de las imprentas y
+            archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
+            las industrias desde el año 1500, cuando un impresor (N. del T.
+            persona que se dedica a la imprenta) desconocido usó una galería de
+            textos
+          </p>
+          <a id="abrirVermas">ver más</a>
+        </article>
+      </section>
+    </div>
+    
     <div class="fondo_modalC">
       <div class="modal_crear">
         <button class="boton_cerrar" id="cerrar_modal">
@@ -96,7 +100,7 @@
               name="fecha"
               id="fechaCInput"
             />
-            <button id="guardarT" type="submit">
+            <button id="guardarT" type="button">
               <lord-icon
                 src="https://cdn.lordicon.com/kpsnbsyj.json"
                 trigger="hover"
@@ -139,7 +143,7 @@
             <input type="date" name="fecha" id="fechaVIInput" disabled />
             <label>Fecha de modificación</label>
             <input type="date" name="fecha" id="fechaVMInput" disabled />
-            <button id="AceptarV" type="submit">
+            <button id="AceptarV" >
               <lord-icon
                 src="https://cdn.lordicon.com/hjeefwhm.json"
                 trigger="hover"
@@ -172,8 +176,8 @@
         </lord-icon>
         <h1>¿Desea eliminar el registro?</h1>
         <div class="BotonesSN">
-          <Button id="NoE" type="submit">No</Button>
-          <button id="SiE" type="button">Si</button>
+          <Button id="NoE">No</Button>
+          <button id="SiE">Si</button>
         </div>
         </div>
       </div>
@@ -196,7 +200,7 @@
             >
         </lord-icon>
         <h1>Registro Eliminado</h1>
-        <button id="AceptarEC" type="submit">Aceptar</button>
+        <button id="AceptarEC">Aceptar</button>
         </div>
       </div>
     </div>

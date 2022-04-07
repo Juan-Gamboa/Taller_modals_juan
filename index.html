@@ -36,32 +36,34 @@
       </nav>
     </header>
 
-    <div class="bodyPage">
-      <section id="tema" class="seccion_tema">
-        <article class="titulo_contenido">
-          <input id="CheckT" type="checkbox">
-          <h2 class="titulotm">Tema 1</h2>
-          <button id="ocultarBtn" class="boton_slidedown">
-            <lord-icon
-              id="iconobtno"
-              src="https://cdn.lordicon.com/eflfmgmj.json"
-              trigger="hover"
-              style="width: 25px; height: 25px"
-            >
-            </lord-icon>
-          </button>
-        </article>
-        <article class="descripciont">
-          <p>
-            Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-            archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
-            las industrias desde el año 1500, cuando un impresor (N. del T.
-            persona que se dedica a la imprenta) desconocido usó una galería de
-            textos
-          </p>
-          <a id="abrirVermas">ver más</a>
-        </article>
-      </section>
+    <div id="bodyPage">
+      <div>
+        <section id="tema" class="seccion_tema">
+          <article class="titulo_contenido">
+            <input id="CheckT" type="checkbox">
+            <h2 class="titulotm">Tema 1</h2>
+            <button id="ocultarBtn" class="boton_slidedown">
+              <lord-icon
+                id="ocultarBtn"
+                src="https://cdn.lordicon.com/eflfmgmj.json"
+                trigger="hover"
+                style="width: 25px; height: 25px"
+              >
+              </lord-icon>
+            </button>
+          </article>
+          <article class="descripciont">
+            <p>
+              Lorem Ipsum es simplemente el texto de relleno de las imprentas y
+              archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
+              las industrias desde el año 1500, cuando un impresor (N. del T.
+              persona que se dedica a la imprenta) desconocido usó una galería de
+              textos
+            </p>
+            <a id="abrirVermas">ver más</a>
+          </article>
+        </section>
+      </div>
     </div>
     
     <div class="fondo_modalC">
@@ -78,16 +80,15 @@
           <form name="form" id="formCrear">
             <label>Titulo:</label>
             <input
-              aria-required="true"
+              required
               name="titulo"
-              type="text"
               id="tituloCInput"
             />
             <label>Codigo</label>
-            <input aria-required="true" type="number" id="codigoCInput" />
+            <input required type="number" id="codigoCInput" />
             <label>Descripción</label>
             <textarea
-              aria-required="true"
+              required
               name="descricion"
               id="descricionCInput"
               cols="30"
@@ -95,12 +96,12 @@
             ></textarea>
             <label>Fecha de ingreso</label>
             <input
-              aria-required="true"
+              required
               type="date"
               name="fecha"
               id="fechaCInput"
             />
-            <button id="guardarT" type="button">
+            <button id="guardarT" type="submit">
               <lord-icon
                 src="https://cdn.lordicon.com/kpsnbsyj.json"
                 trigger="hover"

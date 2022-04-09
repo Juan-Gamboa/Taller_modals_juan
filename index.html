@@ -37,14 +37,14 @@
     </header>
 
     <div id="bodyPage">
-      <div>
+      <div id="contenidoPage">
         <section id="tema" class="seccion_tema">
           <article class="titulo_contenido">
             <input id="CheckT" type="checkbox">
-            <h2 class="titulotm">Tema 1</h2>
-            <button id="ocultarBtn" class="boton_slidedown">
+            <h2 class="titulotm">Tema Ejemplo</h2>
+            <button id="oBtn" class="boton_slidedown">
               <lord-icon
-                id="ocultarBtn"
+                id="oBtn"
                 src="https://cdn.lordicon.com/eflfmgmj.json"
                 trigger="hover"
                 style="width: 25px; height: 25px"
@@ -52,7 +52,7 @@
               </lord-icon>
             </button>
           </article>
-          <article class="descripciont">
+          <article id="desEj" class="descripciont">
             <p>
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
@@ -75,7 +75,7 @@
             style="width: 40px; height: 40px"
           ></lord-icon>
         </button>
-        <div class="formodalC">
+        <div  class="formodalC">
           <h2 class="modal_tituloC">Crear nuevo tema</h2>
           <form name="form" id="formCrear">
             <label>Titulo:</label>
@@ -116,6 +116,63 @@
       </div>
     </div>
 
+    <div class="fondo_modalM">
+      <div class="modal_crear">
+        <button class="boton_cerrar" id="cerrar_modalM">
+          <lord-icon
+            src="https://cdn.lordicon.com/vfzqittk.json"
+            trigger="hover"
+            style="width: 40px; height: 40px"
+          ></lord-icon>
+        </button>
+        <div id="formM" class="formodalC">
+          <h2 class="modal_tituloC">Modificar tema</h2>
+          <form name="form" id="formM">
+            <label>Titulo:</label>
+            <input
+              required
+              name="titulo"
+              id="tituloMInput"
+            />
+            <label>Codigo</label>
+            <input required type="number" id="codigoMInput" />
+            <label>Descripción</label>
+            <textarea
+              required
+              name="descricion"
+              id="descricionMInput"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <label>Fecha de ingreso</label>
+            <input
+              required
+              type="date"
+              name="fecha"
+              id="fechaCMInput"
+            />
+            <label>Fecha de modificación</label>
+            <input
+              required
+              type="date"
+              name="fecha"
+              id="fechaMInput"
+            />
+            <button id="guardarMT" type="submit">
+              <lord-icon
+                src="https://cdn.lordicon.com/kpsnbsyj.json"
+                trigger="hover"
+                colors="primary:#121331"
+                style="width: 50px; height: 50px"
+              >
+              </lord-icon
+              >Guardar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="fondo_modalV">
       <div class="modal_crear">
         <button class="boton_cerrar" id="cerrar_modalV">
@@ -126,7 +183,7 @@
           ></lord-icon>
         </button>
         <div class="formodalC">
-          <h2 class="modal_tituloC">Crear nuevo tema</h2>
+          <h2 class="modal_tituloC">Tema consultado</h2>
           <form name="form" id="formCrear">
             <label>Titulo:</label>
             <input name="titulo" type="text" id="tituloVInput" disabled />

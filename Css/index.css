@@ -81,6 +81,15 @@ h2{
     width: 100%;
     display: none;
 }
+.fondo_modalB{
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.226);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
 .fondo_modalV{
     top: 0;
     left: 0;

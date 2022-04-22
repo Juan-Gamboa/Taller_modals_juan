@@ -92,6 +92,7 @@
               id="descricionCInput"
               cols="30"
               rows="10"
+              maxlength="300"
             ></textarea>
             <label>Fecha de ingreso</label>
             <input
@@ -131,9 +132,9 @@
             <input
               required
               name="Buscasid"
-              id="BuscarId"
+              id="BId"
             />
-            <button id="buscarT" type="submit">
+            <button id="buscarT">
               <lord-icon
                 src="https://cdn.lordicon.com/pvbutfdk.json"
                 trigger="hover"
@@ -175,6 +176,7 @@
               id="descricionMInput"
               cols="30"
               rows="10"
+              maxlength="300"
             ></textarea>
             <label>Fecha de ingreso</label>
             <input
@@ -265,6 +267,12 @@
             >
         </lord-icon>
         <h1>¿Desea eliminar el registro?</h1>
+        <label style="font-size: 9pt;">Buscar Tema a eliminar:</label>
+        <input
+          required
+          name="BuscasEid"
+          id="EId"
+        />
         <div class="BotonesSN">
           <Button id="NoE">No</Button>
           <button id="SiE">Si</button>

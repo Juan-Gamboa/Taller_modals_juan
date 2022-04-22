@@ -33,7 +33,15 @@ $(document).ready(()=>{
       '</section>');/*/
 
 //creacion array
-    let temas = [];
+    let temas = [
+        {
+            titulo: 'Tema_1',
+            codigo: '0',
+            descripcion: 'Ciencias',
+            fecha_Ingreso:'2022-04-04',
+            fecha_Modificar:'2022-04-22'
+          }
+    ];
     function addtema() {
         let titulo = $("#tituloCInput").val();
         let codigo =$("#codigoCInput").val();
@@ -65,42 +73,84 @@ $(document).ready(()=>{
         $(".BtnVerM").click(function(){
             let id = $(this).attr('id');
             console.log(id);
-            $(".fondo_modalV").css("display","block");
-            $("#tituloVInput").text(Tema.titulo);
-            $("#codigoVInput").text(Tema.codigo);
-            $("#descricionVInput").text(Tema.descripcion);
-            $("#fechaVIInput").text(Tema.fecha_Ingreso);
-            $("#fechaVMInput").text(Tema.fecha_Modificar);
-            //let codigo = id.replace();
-            //if (id == Tema.codigo) {
-                
-                
-            //}else{
-
-            //}
-            
-            
+            let TemaB = Buscarid(id);
+            if (TemaB != null) {
+                console.log("VM SI")
+                $(".fondo_modalV").css("display","block");  
+                $("#tituloVInput").val(TemaB.titulo);
+                $("#codigoVInput").html(TemaB.codigo);
+                $("#descricionVInput").html(TemaB.descripcion);
+                $("#fechaVIInput").html(TemaB.fecha_Ingreso);
+                $("#fechaVMInput").html(TemaB.fecha_Modificar);   
+            };    
         });
-        
-   
     };
-    function modtema(temas) {
-        let Tema = temas;
-        $(".check").click(function() {
-            let id = $(this).attr('id');
-            let index = id;
-            let check = temas.index;
-            console.log(id);
+
+    function modtema() {
+        let TemaB = Buscarid($("#BId").val());
+        if (TemaB != null) {
+            console.log("MoD SI")
+            $(".fondo_modalM").css("display","block");
+            $("#tituloMInput").val(TemaB.titulo);
+            $("#codigoMInput").text(TemaB.codigo);
+            $("#descricionMInput").text(TemaB.descripcion);
+            $("#fechaCMInput").text(TemaB.fecha_Ingreso);
+            $("#fechaMInput").text(TemaB.fecha_Modificar);   
+        }       
+    };
+
+    function Buscarid(id){
+        console.log(id);
+        console.log("si buscar id");
+        for(let item of temas){
+          console.log(item.codigo,id);
+          if (item.codigo == id){
+            return item;
+          }
+      
+        }
+          return null;
+    };
+
+    function ActuaTema(id){
+        temas.forEach(function(tema, i) {
+            if (tema.codigo == id) {
+                temas[i] = {
+                codigo: tema.codigo,
+                descripcion: $('#descricionMInput').val(),
+                titulo: $('#tituloMInput').val(),
+                fecha_Ingreso:tema.fecha_Ingreso,
+                fecha_Modificar:$('#fechaMInput').val()
+                };
+                let ct = id.replace('T','');
+                if ($('#T'+ id) == ct ) {
+                    let nuevoS = $('#T'+ id);
+                    let Thtml = getTemaHtml(Tema);
+                    nuevoS.html(Thtml);  
+                }
+            };
         }); 
-        let tituloM = $("#tituloMInput").val();
-        let descripM = $("#descricionMInput").val();
-        let fechaM = $("#fechaMInput").val();       
     };
+
     
-
-    function deltema(Tema){
-
-    };
+    $("#SiE").click(function(){
+        $(".fondo_modalE").css("display","none");
+        var id = $("#Eid").val();
+        var  index =  -1;
+        let ct = id.replace('T','');
+        temas.forEach(function(tema,i) {
+            if (tema.codigo == id) {
+            index = i;
+                if ($('#T'+ id) == ct ) {
+                    $('#T'+ id).remove();  
+                }
+            }
+        });
+        if(index >= 0){
+        temas.splice(index,1)
+        }
+        $(".fondo_modalEC").css("display","block");
+    });
 
     
 
@@ -108,7 +158,6 @@ $(document).ready(()=>{
         let Thtml = '';
         Thtml+='<section id ="T'+ Tema.codigo +'" class="seccion_tema">';
         Thtml+='    <article class="titulo_contenido">';
-        Thtml+='        <input class="check" id="'+Tema.codigo +'" type="checkbox">';
         Thtml+='        <h2 class="titulotm">'+Tema.titulo +'</h2>';
         Thtml+='        <button name="slide" id="ocultarBtn'+Tema.codigo+'" class="boton_slidedown">';
         Thtml+='            <lord-icon name="slide" ';
@@ -121,7 +170,7 @@ $(document).ready(()=>{
         Thtml+='    </article>';
         Thtml+='    <article id ="Descrip'+ Tema.codigo +'" class="descripciont">';
         Thtml+='        <p>'+Tema.descripcion+'</p>';
-        Thtml+='        <a class="BtnVerM" id="VM'+ Tema.codigo+'">ver más</a>';
+        Thtml+='        <a class="BtnVerM" id="'+ Tema.codigo+'">ver más</a>';
         Thtml+='    </article>' ;
         Thtml+='</section>';
         return Thtml;
@@ -160,9 +209,15 @@ $(document).ready(()=>{
         console.log('si guardo');
     });
 
-    $("#formM").submit((ev)=> {
+    $("#formodalB").submit((ev)=>{
         ev.preventDefault();
         modtema();
+    });
+
+    $("#formM").submit((ev)=> {
+        ev.preventDefault();
+        let bid = $("#BId").val();
+        ActuaTema(bid);
         $(".fondo_modalM").css("display","none");
         console.log('si modifico');
     });
@@ -212,10 +267,7 @@ $(document).ready(()=>{
         $(".fondo_modalE").css("display","none");
     });
 
-    $("#SiE").click(function(){
-        $(".fondo_modalE").css("display","none");
-        $(".fondo_modalEC").css("display","block");
-    });
+    
 
     $("#cerrar_modalEC").click(function(){
         $(".fondo_modalEC").css("display","none");
